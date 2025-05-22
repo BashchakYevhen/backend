@@ -1,0 +1,113 @@
+{
+  "openapi": "3.0.0",
+  "paths": {
+    "/": {
+      "get": {
+        "operationId": "AppController_getHello",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        }
+      }
+    },
+    "/recipes": {
+      "get": {
+        "operationId": "AppController_getAllRecipes",
+        "parameters": [
+          {
+            "name": "search",
+            "required": false,
+            "in": "query",
+            "description": "Search term to filter recipes by name or description",
+            "schema": {
+              "example": "chocolate",
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        }
+      }
+    },
+    "/filtered-recipes": {
+      "get": {
+        "operationId": "AppController_getFilteredRecipes",
+        "parameters": [
+          {
+            "name": "ingredients",
+            "required": false,
+            "in": "query",
+            "description": "Ingredient to filter recipes",
+            "schema": {
+              "example": "tomato",
+              "type": "string"
+            }
+          },
+          {
+            "name": "country",
+            "required": false,
+            "in": "query",
+            "description": "Country of origin to filter recipes",
+            "schema": {
+              "example": "Italy",
+              "type": "string"
+            }
+          },
+          {
+            "name": "category",
+            "required": false,
+            "in": "query",
+            "description": "Category to filter recipes",
+            "schema": {
+              "example": "Dessert",
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        }
+      }
+    },
+    "/{id}": {
+      "get": {
+        "operationId": "AppController_getRecipeById",
+        "summary": "Get recipe by ID",
+        "parameters": [
+          {
+            "name": "id",
+            "required": true,
+            "in": "path",
+            "description": "Recipe ID",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        }
+      }
+    }
+  },
+  "info": {
+    "title": "Receipt",
+    "description": "Receipts API",
+    "version": "0.0.1",
+    "contact": {}
+  },
+  "tags": [],
+  "servers": [],
+  "components": {
+    "schemas": {}
+  }
+}
