@@ -12,7 +12,7 @@ export class AppService {
     private readonly configService: ConfigService,
   ) {}
   getHello(): string {
-    return 'Hello World!';
+    return 'Hello World !';
   }
   async getAllRecipes(search = '') {
     try {
